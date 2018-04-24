@@ -1,0 +1,14 @@
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+/dev/mapper/ubuntu--vg-root /               ext4    errors=remount-ro 0       1
+# /boot was on /dev/sda1 during installation
+UUID=d0d1f4b9-a0ba-4039-ad64-d28c39dd5177 /boot           ext2    defaults        0       2
+/dev/mapper/ubuntu--vg-swap_1 none            swap    sw              0       0
+/dev/fd0        /media/floppy0  auto    rw,user,noauto,exec,utf8 0       0
+UUID=5b60d7df-4c0a-4eee-b87e-552e476f3846 /home/kimchki/HOME2  ext4  errors=remount-ro  0  1
+UUID=34ece15a-30b9-4baa-88cf-443233ced596 /home/kimchki/BACKUP  ext4  errors=remount-ro  0  1

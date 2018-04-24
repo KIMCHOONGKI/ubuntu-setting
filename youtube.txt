@@ -1,0 +1,21 @@
+youtube-dl --help
+youtube-dl -F https://www.youtube.com/watch?v=DBlcVsY_gq4
+youtube-dl -f 272+251 https://www.youtube.com/watch?v=DBlcVsY_gq4
+
+http://deneb21.tistory.com/376
+https://clipgrab.org
+
+sudo add-apt-repository ppa:clipgrab-team/ppa
+sudo apt-get update
+sudo apt-get install clipgrab
+
+# handbrake.sh
+
+ffmpeg -y -i "/tmp/clipgrab-download-nS2215" -i "/tmp/clipgrab-download-Lh2215" -acodec copy -vcodec copy -f mp4 "/tmp/clipgrab-concat--kn2215"
+
+ffmpeg -y -i 160625\ 다이아\(DIA\)\ 홍대버스킹\ 은진\ -\ 왠지\ \[직캠\ Fancam\]\ by\ 힙 합가이.webm -i 160625\ 다이아\(DIA\)\ 홍대버스킹\ 은진\ -\ 왠지\ \[직캠\ Fancam\]\ by\ 힙 합가이.weba -acodec libvorbis -vcodec libvpx -f mp4 "result"
+
+ffmpeg -y -i 1.webm -i 1.weba -acodec libvorbis -vcodec libvpx -f mp4 "result"
+
+ffmpeg -y -i 1.webm -i 1.weba -acodec libvorbis -vcodec libvpx -f webm "result"
+
