@@ -1,11 +1,13 @@
 #!/bin/bash
 
-echo "     [begin]" >> /home/kimchki/r.time
-date >> /home/kimchki/r.time
+TIME_DIR=/home/pi/r.time
+
+echo "     [begin]" >> ${TIME_DIR}
+date >> ${TIME_DIR}
 
 rsync -az --delete 35.188.212.253:/home/kimchki/rsync_source /home/kimchki/
 
-echo "     [end]" >> /home/kimchki/r.time
-date >> /home/kimchki/r.time
+echo "     [end]" >> ${TIME_DIR}
+date >> ${TIME_DIR}
 
-echo "" >> /home/kimchki/r.time
+echo "" >> ${TIME_DIR}
