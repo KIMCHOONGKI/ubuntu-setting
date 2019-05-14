@@ -19,3 +19,6 @@ mount -t cifs //172.30.1.108/d /home/kimchki/HOME2/FTPD -o user=livessun,passwor
 # \\172.30.1.108\h\FTPData3
 # \\172.30.1.107\Users\kimchki
 
+mount -t cifs //172.21.17.184/조직-오픈소스sw그룹/DBMS파트 /home/postgresql/www/DBMS파트 -o vers=2.1,user=ck0911.kim,password=score0911*,uid=1001,gid=1001
+
+
