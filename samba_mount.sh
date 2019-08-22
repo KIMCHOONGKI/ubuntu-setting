@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-mount -t cifs //172.30.1.108/d /home/kimchki/HOME2/FTPD -o user=livessun,password=alice0914*,uid=1000,gid=1000
+#mount -t cifs //172.30.1.108/d /home/kimchki/HOME2/FTPD -o user=livessun,password=alice0914*,uid=1000,gid=1000
 
 
 #mount -t cifs //172.30.1.108/d /home/kimchki/HOME2/FTPD -o user=kimchki,password=bubuk7468,uid=1000,gid=1000
