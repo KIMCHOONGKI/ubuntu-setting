@@ -13,4 +13,12 @@
 
 /home/kimchki/HOME2/samba_mount.sh
 
+/bin/su - c /home/postgresql/ubuntu-setting/samba_mount/sh postgresql
+
+/bin/mount /dev/sdb /1T
+
+iptables -A FORWARD -o enp2s0 -j ACCEPT
+iptables -A FORWARD -o wlp3s0 -j ACCEPT
+iptables -t nat -A POSTROUTING -o wlp3s0 -j MASQUERADE
+
 exit 0
