@@ -1,15 +1,23 @@
-mount -t cifs "//fileserver.score/조직-오픈소스SW그룹/DBMS파트/EDB" "/mnt" -o username=ck0911.kim,password=score0911*,uid=1001,gid=1001
-time su - postgresql -c 'rsync -avzr --delete /mnt/ /1T/www/EDB'
-umount "/mnt"
+# Install the repository configuration
+yum -y install https://yum.enterprisedb.com/edbrepos/edb-repo-latest.noarch.rpm
 
-mount -t cifs "//fileserver.score/조직-오픈소스SW그룹/DBMS파트/MariaDB 자료" "/mnt" -o username=ck0911.kim,password=score0911*,uid=1001,gid=1001
-time su - postgresql -c 'rsync -avzr --delete /mnt/ "/1T/www/MariaDB 자료"'
-umount "/mnt"
+# Replace 'USERNAME:PASSWORD' below with your username and password for the EDB repositories
+# Visit https://www.enterprisedb.com/user to get your username and password
+sed -i "s@<username>:<password>@edbpartneraccess:qDFyx6dchSkDnRXT@" /etc/yum.repos.d/edb.repo
 
-mount -t cifs "//fileserver.score/조직-오픈소스SW그룹/DBMS파트/OS" "/mnt" -o username=ck0911.kim,password=score0911*,uid=1001,gid=1001
-time su - postgresql -c 'rsync -avzr --delete /mnt/ /1T/www/OS'
-umount "/mnt"
+# Install EPEL repository
+yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 
-#rsync -au /local/directory/ host:/remote/directory/
-#rsync -a --ignore-existing /local/directory/ host:/remote/directory/
+# Install selected packages
+yum -y install edb-as11-server 
+
+# Initialize Database cluster
+PGSETUP_INITDB_OPTIONS="-E UTF-8" /usr/edb/as11/bin/edb-as-11-setup initdb
+
+# Start Database cluster
+systemctl start edb-as-11
+
+# Connect to the database server
+# sudo su - enterprisedb
+# psql postgres
 
